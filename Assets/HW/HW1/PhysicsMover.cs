@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PhysicsMover : MonoBehaviour
@@ -14,7 +15,6 @@ public class PhysicsMover : MonoBehaviour
 
     void Update()
     {
-      
         if (Input.GetKey(KeyCode.W))
         {
             isMoving = true;
@@ -41,3 +41,11 @@ public class PhysicsMover : MonoBehaviour
         }
     }
 }
+
+/*
+1. Which function(s) in this script are used incorrectly? 
+Update - applying physics
+2. What symptoms can result from physics forces in Update() or LateUpdate()? 
+Update() or LateUpdate() are frame dependent and not consistent like fixedupdate, making physics inconsistent if implemented there
+3. Where should the physics code be placed instead? FixedUpdate()
+*/

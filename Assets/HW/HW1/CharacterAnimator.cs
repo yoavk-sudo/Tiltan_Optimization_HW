@@ -34,3 +34,12 @@ public class CharacterAnimator : MonoBehaviour
         }
     }
 }
+
+/*
+1. What is the cost of calling GetComponent() in every frame? 
+GetComponent() is expensive on CPU and should be cached.
+2. How can we reduce unnecessary calls to SetLookAtPosition()? 
+We cache the last position and only call SetLookAtPosition() if the position has changed.
+3. What performance issues would show in Profiler or Timeline view? 
+The profiler would show spikes in CPU usage when GetComponent() is called frequently, and the Timeline view would show inconsistent frame times due to the overhead of these calls.
+*/
